@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyKhaata</title>
+    <link rel="icon" href="favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section id="preloader" class="shownpanel">
+        <img src="logo.png" alt="" id="preloaderlogo1">
+        <img src="loaderdots.gif" alt="" id="preloaderlogo2">
+    </section>
+
+    <section id="loaderpanel">
+        <img src="loader.gif" alt="">
+    </section>
+
+    <section id="connecerrorpanel">
+        <div>
+            <img src="connec.png" alt="" id="conneclogo">
+            <p>Connection Error!</p>
+        </div>
+        <div id="reloadbut">Reload</div>
+    </section>
+
+    <section id="passwordpanel">
+        <img src="passlogo.png" alt="" id="passlogo">
+        <div id="welcomemsg">Hi, User</div>
+        <div id="boxcon4">
+            <input type="password" id="pb1" class="pb active semiactive" maxlength="1">
+            <input type="password" id="pb2" class="pb" maxlength="1">
+            <input type="password" id="pb3" class="pb" maxlength="1">
+            <input type="password" id="pb4" class="pb" maxlength="1">
+        </div>
+        <div id="passsub"><span>Verify</span>
+            <img src="verified.png" alt="" id="verifiedlogo">
+            <img src="wrong.png" alt="" id="notverifiedlogo">
+        </div>
+        <div id="changepassbut">
+            Change Password
+        </div>
+    </section>
+
+    <section id="changepasswordpanel">
+        <div id="oldpasswordcon">
+            <div id="oldpasshead">Old Password</div>
+            <div id="oboxcon4">
+                <input type="password" id="opb1" class="cpb opb active semiactive" maxlength="1">
+                <input type="password" id="opb2" class="cpb opb" maxlength="1">
+                <input type="password" id="opb3" class="cpb opb" maxlength="1">
+                <input type="password" id="opb4" class="cpb opb" maxlength="1">
+            </div>
+        </div>
+        <div id="newpasswordcon">
+            <div id="newpasshead">New Password</div>
+            <div id="nboxcon4">
+                <input type="password" id="npb1" class="cpb npb semiactive" maxlength="1">
+                <input type="password" id="npb2" class="cpb npb" maxlength="1">
+                <input type="password" id="npb3" class="cpb npb" maxlength="1">
+                <input type="password" id="npb4" class="cpb npb" maxlength="1">
+            </div>
+        </div>
+        <div id="cngpassbutcon">
+            <div id="cngpanelbackbut">
+                <img src="back.png" alt="">
+                <span>Back</span>
+            </div>
+            <div id="cngpassconfirmbut">
+                <span>Change</span>
+                <img src="change.png" alt="" id="cngpassconfirmimg">
+                <img src="wrong.png" alt="" id="cngpasswrongimg">
+                <img src="load.gif" alt="" id="cngpassloadimg">
+                <img src="error.png" alt="" id="cngpasserrorimg">
+            </div>
+        </div>
+    </section>
+
+    <section id="homescreenpanel">
+        <div id="hometop">
+            <label id="humansearchcon" for="humansearch">
+                <input type="text" id="humansearch" placeholder="Search">
+                <img src="search.png" alt="" id="humansearchlogo">
+            </label>
+            <div id="addpersoncon">
+                <img src="addperson.png" alt="">
+                <span>ADD</span>
+            </div>
+        </div>
+        <div id="homebottom">
+            <div id="nocustomercon">
+                <img src="nocus.png" alt="">
+                <span>Added People are shown here</span>
+            </div>
+            <div id="nopersonfound">
+                <img src="nofound.png" alt="">
+            </div>
+            <div id="personlistcon">
+
+            </div>
+        </div>
+    </section>
+
+    <section id="addpersonpanel">
+        <div>
+            <img src="user.png" alt="">
+        </div>
+        <div id="personnamecon">
+            <input type="text" id="personnameinput" placeholder="Enter Name">
+            <div id="addpersonbutcon">
+                <div id="canceladdpersonbut">Cancel</div>
+                <div id="addpersonbut" class="inactive">
+                    <span>Save</span>
+                    <img src="load.gif" alt="" id="loadaddpersonimg">
+                    <img src="error.png" alt="" id="erroraddpersonimg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="addtransactionpanel">
+        <div id="personinfocon">
+            <div id="leftsideinfoitem">
+                <div id="infoitemnamecon">
+                    <div id="infoitemname">
+
+                    </div>
+                    <div id="pencilcon">
+                        <img src="pencil.png" alt="">
+                    </div>
+                </div>
+                <div id="infoitemdate">
+                    <span id="iids1"></span><sup id="itemdatesup"></sup><span id="iids2"></span>
+                </div>
+            </div>
+            <div id="rightsideinfoitem">
+                <div id="balanceinfoitem">
+
+                </div>
+            </div>
+        </div>
+        <div id="transactionaddbar">
+            <span>Transactions</span>
+            <div id="addtransactionbut">
+                <img src="addtrans.png" alt="">
+            </div>
+        </div>
+        <div id="actualtransactionbox">
+            <div id="notransactionbox">
+                <img src="notrans.png" alt="">
+            </div>
+            <div id="notransactionfound">
+                <img src="nofound.png" alt="">
+            </div>
+            <div id="actualtransactionlist">
+                <div id="searchbarintransactionlist">
+                    <div id="leftinsearchbarintrans">
+                        <input type="text" id="searchbarintrans" placeholder="Search">
+                    </div>
+                    <div id="rightinsearchbarintrans">
+                        <div>You Gave</div>
+                        <div>Balance</div>
+                    </div>
+                </div>
+                <div id="translist">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="personinfobutcon">
+            <div id="gohomebutfrominfo">
+                <img src="home.png" alt="">
+                <span>Home</span>
+            </div>
+            <div id="deletebutfrominfo">
+                <span>Delete</span>
+                <img src="delete.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="deletepersonpanel">
+        <div>
+            <img src="delper.png" alt="">
+            <div id="delmsgforper">
+                Delete <span id="nameindelpopup"></span> ?
+            </div>
+            <div id="delpopbutcon">
+                <div id="cancelperdelbut">
+                    Cancel
+                </div>
+                <div id="confirmperdelbut">
+                    <span>Confirm</span>
+                    <img src="load.gif" alt="" id="loaddelperimg">
+                    <img src="error.png" alt="" id="errordelperimg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="individualtransinfopanel">
+        <div id="nameintransinfopanel">
+            <img src="user.png" alt="">
+            <span> </span>
+        </div>
+        <div id="venueintransinfopanelcon">
+            <div id="venueintransinfopanelhead">
+                <img src="venue.png" alt="">
+                <span>Venue</span>
+            </div>
+            <div id="venueintransinfopanel">
+
+            </div>
+        </div>
+        <div id="shiftintransinfopanelcon">
+            <div id="shiftintransinfopanelhead">
+                <img src="shift.png" alt="">
+                <span>Shift</span>
+            </div>
+            <div id="shiftintransinfopanel">
+
+            </div>
+        </div>
+        <div id="dateintransinfopanelcon">
+            <div id="dateintransinfopanelhead">
+                <img src="date.png" alt="">
+                <span>Date</span>
+            </div>
+            <div id="dateintransinfopanel">
+                
+            </div>
+        </div>
+        <div id="totalintransinfopanelcon">
+            <div id="totalintransinfopanelhead">
+                <img src="total.png" alt="">
+                <span>Total</span>
+            </div>
+            <div id="totalintransinfopanel">
+
+            </div>
+        </div>
+        <div id="gaveintransinfopanelcon">
+            <div id="gaveintransinfopanelhead">
+                <img src="given.png" alt="">
+                <span>You Gave</span>
+            </div>
+            <div id="gaveintransinfopanel">
+
+            </div>
+        </div>
+        <div id="editbuttonforindtrans">
+            <img src="pencil.png" alt="">
+        </div>
+        <div id="individualtransinfobutcon">
+            <div id="backfromindtranspanel">
+                <img src="back.png" alt="">
+                <span>Back</span>
+            </div>
+            <div id="deleteindtranspanel">
+                <span>Delete</span>
+                <img src="delete.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section id="individualtransinfopanel2">
+        <div id="nameintransinfopanel2">
+            <img src="user.png" alt="">
+            <span> </span>
+        </div>
+        <div id="dateintransinfopanelcon2">
+            <div id="dateintransinfopanelhead2">
+                <img src="date.png" alt="">
+                <span>Date</span>
+            </div>
+            <div id="dateintransinfopanel2">
+
+            </div>
+        </div>
+        <div id="gaveintransinfopanelcon2">
+            <div id="gaveintransinfopanelhead2">
+                <img src="given.png" alt="">
+                <span>You Gave</span>
+            </div>
+            <div id="gaveintransinfopanel2">
+
+            </div>
+        </div>
+        <div id="editbuttonforindtrans2">
+            <img src="pencil.png" alt="">
+        </div>
+        <div id="individualtransinfobutcon2">
+            <div id="backfromindtranspanel2">
+                <img src="back.png" alt="">
+                <span>Back</span>
+            </div>
+            <div id="deleteindtranspanel2">
+                <span>Delete</span>
+                <img src="delete.png" alt="">
+            </div>
+        </div>  
+    </section>
+
+    <section id="deletetranspanel">
+        <div>
+            <img src="deltrans.png" alt="">
+            <div id="delmsgfortrans">
+                <span>Delete Transaction ?</span>
+                <span>This will affect the balance</span>
+            </div>
+            <div id="delpopbutconfortrans">
+                <div id="canceltransdelbut">Cancel</div>
+                <div id="confirmtransdelbut">
+                    <span>Confirm</span>
+                    <img src="load.gif" alt="" id="loaddeltransimg">
+                    <img src="error.png" alt="" id="errordeltransimg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="transeditpanel">
+        <div id="transeditpanelheader">
+            <div id="transeditop1" class="selectedoption">1</div>
+            <div id="transeditop2">2</div>
+        </div>
+        <div id="transeditpanel1" class="showntranseditpanel">
+            <div id="venueeditcon">
+                <input type="text" id="venueeditinput" placeholder=" ">
+                <label for="venueeditinput">Venue</label>
+                <div class="errormsgfortransedit">* Fill Correctly</div>
+            </div>
+            <div id="dtsftconinedittrans">
+                <div id="dateeditcon">
+                    <input type="date" id="dateeditinput">
+                    <label for="dateeditinput">Date</label>
+                    <div class="errormsgfortransedit">* Fill Correctly</div>
+                </div>
+                <div id="shifteditcon">
+                    <div id="justsfttext">Shift</div>
+                    <div id="shiftedit">
+                        <div id="lunchedit" class="selectedshift">Lunch</div>
+                        <div id="dinneredit">Dinner</div>
+                    </div>
+                </div>
+            </div>
+            <div id="totalgaveconinedittrans">
+                <div id="totaleditcon">
+                    <input type="text" id="totaleditinput" placeholder=" " onkeypress="validateInput(event,this)">
+                    <label for="totaleditinput">Total</label>
+                    <div class="errormsgfortransedit">* Fill Correctly</div>
+                </div>
+                <div id="gaveeditcon">
+                    <input type="text" id="gaveeditinput" placeholder=" " onkeypress="validateInput(event,this)">
+                    <label for="gaveeditinput">You Gave</label>
+                    <div class="errormsgfortransedit">* Fill Correctly</div>
+                </div>
+            </div>
+            <div id="butconfortransediting">
+                <div id="cancelfortransedit">
+                    Cancel
+                </div>
+                <div id="savefortransedit">
+                    <span>Save</span>
+                    <img src="load.gif" alt="" id="loadimgfortransedit">
+                    <img src="error.png" alt="" id="errorimgfortransedit">
+                </div>
+            </div>
+        </div>
+        <div id="transeditpanel2">
+            <div id="dateeditcon2">
+                <input type="date" id="dateeditinput2" placeholder=" ">
+                <label for="dateeditinput2">Date</label>
+                <div class="errormsgfortransedit">* Fill Correctly</div>
+            </div>
+            <div id="gaveeditcon2">
+                <input type="text" id="gaveeditinput2" placeholder=" " onkeypress="validateInput(event,this)">
+                <label for="gaveeditinput2">You Gave</label>
+                <div class="errormsgfortransedit">* Fill Correctly</div>
+            </div>
+            <div id="butconfortransediting2">
+                <div id="cancelfortransedit2">
+                    Cancel
+                </div>
+                <div id="savefortransedit2">
+                    <span>Save</span>
+                    <img src="load.gif" alt="" id="loadimgfortransedit2">
+                    <img src="error.png" alt="" id="errorimgfortransedit2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="js.js"></script>
+
+</body>
+
+</html>

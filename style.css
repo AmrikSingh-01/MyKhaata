@@ -1,0 +1,2166 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+input[type="date"] {
+    background-color: transparent;
+}
+
+#preloader {
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fcfcff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-direction: column;
+    position: absolute;
+    opacity: 0;
+}
+
+#preloaderlogo1 {
+    width: 100px;
+}
+
+#preloaderlogo2 {
+    height: 22px;
+}
+
+#loaderpanel {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fcfcff;
+    opacity: 0;
+}
+
+#loaderpanel>img {
+    width: 50px;
+}
+
+#connecerrorpanel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: white;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+#connecerrorpanel>div:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#connecerrorpanel>div:first-child>p {
+    font-weight: 700;
+    text-align: center;
+    padding: 0;
+}
+
+#conneclogo {
+    width: 100px;
+}
+
+#reloadbut {
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
+    color: white;
+    font-weight: 500;
+    background-color: #0752ad;
+}
+
+#passwordpanel {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: white;
+    position: absolute;
+    opacity: 0;
+}
+
+#passlogo {
+    width: 100px;
+    filter: drop-shadow(0 0 5px rgb(142, 142, 142));
+}
+
+#welcomemsg {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bolder;
+    color: #0752ad;
+}
+
+#boxcon4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+#boxcon4>input {
+    width: 50px;
+    height: 50px;
+    color: grey;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    outline: 1px solid grey;
+    font-size: 1.5em;
+    font-weight: bolder;
+    pointer-events: none;
+    caret-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+#boxcon4>.pb.active {
+    color: #a80b54;
+    outline: 1.5px solid #a80b54;
+}
+
+#boxcon4>.pb.semiactive {
+    pointer-events: auto;
+}
+
+#passsub {
+    margin-top: 20px;
+    width: 215px;
+    padding: 5px;
+    color: white;
+    background-color: #626979;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.2em;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#passsub>img {
+    height: 1em;
+}
+
+#passsub.wrong {
+    background-color: rgb(224, 58, 58);
+}
+
+#notverifiedlogo {
+    display: none;
+}
+
+#passsub.wrong>#notverifiedlogo {
+    display: block;
+}
+
+#passsub.wrong>#verifiedlogo {
+    display: none;
+}
+
+#passsub.active {
+    pointer-events: auto;
+    background-color: #0752ad;
+}
+
+#changepassbut {
+    color: rgb(161, 161, 161);
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+#changepasswordpanel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    gap: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+}
+
+#oldpasswordcon,
+#newpasswordcon {
+    display: flex;
+    gap: 3px;
+    flex-direction: column;
+}
+
+#oldpasshead,
+#newpasshead {
+    font-size: 0.8em;
+    font-weight: bolder;
+    text-align: center;
+    color: grey;
+}
+
+#cngpassbutcon {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+#cngpassbutcon>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    font-size: 0.8em;
+    min-width: 80px;
+}
+
+#cngpassbutcon>div>img {
+    height: 0.7em;
+}
+
+#cngpanelbackbut {
+    background-color: black;
+}
+
+#cngpassconfirmbut {
+    background-color: #626979;
+    pointer-events: none;
+}
+
+#cngpassconfirmbut.load {
+    background-color: green;
+}
+
+#cngpassconfirmbut.active {
+    background-color: green;
+    pointer-events: auto;
+}
+
+#cngpassconfirmbut.wrong {
+    background-color: rgb(224, 58, 58);
+}
+
+#cngpassconfirmbut.error {
+    background-color: #ffbb00;
+    color: black;
+}
+
+#cngpasserrorimg,
+#cngpasswrongimg,
+#cngpassloadimg,
+#cngpassconfirmbut.wrong>#cngpassconfirmimg,
+#cngpassconfirmbut.wrong>#cngpasserrorimg,
+#cngpassconfirmbut.wrong>#cngpassloadimg,
+#cngpassconfirmbut.active>#cngpasserrorimg,
+#cngpassconfirmbut.active>#cngpasswrongimg,
+#cngpassconfirmbut.active>#cngpassloadimg,
+#cngpassconfirmbut.error>#cngpassconfirmimg,
+#cngpassconfirmbut.error>#cngpasswrongimg,
+#cngpassconfirmbut.error>#cngpassloadimg,
+#cngpassconfirmbut.load>#cngpasserrorimg,
+#cngpassconfirmbut.load>#cngpasswrongimg,
+#cngpassconfirmbut.load>#cngpassconfirmimg {
+    display: none;
+}
+
+#cngpassconfirmbut.load>#cngpassloadimg,
+#cngpassconfirmbut.error>#cngpasserrorimg,
+#cngpassconfirmbut.wrong>#cngpasswrongimg {
+    display: block;
+}
+
+#oboxcon4,
+#nboxcon4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+#changepasswordpanel .cpb {
+    width: 40px;
+    height: 40px;
+    color: grey;
+    border-radius: 5px;
+    box-shadow: none;
+    border: none;
+    outline: 1px solid grey;
+    font-size: 1.5em;
+    font-weight: bolder;
+    pointer-events: none;
+    caret-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+#changepasswordpanel .cpb.active {
+    color: #a80b54;
+    outline: 1.5px solid #a80b54;
+
+}
+
+#changepasswordpanel .cpb.semiactive {
+    pointer-events: auto;
+}
+
+#homescreenpanel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    opacity: 0;
+}
+
+#hometop {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    height: 60px;
+    background-color: #0752ad;
+}
+
+#humansearchcon {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 3px;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: white;
+    padding: 5px;
+    height: 80%;
+    width: min(50%, 250px);
+}
+
+#humansearchlogo {
+    width: 7%;
+    aspect-ratio: 1;
+    filter: invert(40%);
+}
+
+#humansearch {
+    height: 100%;
+    width: 90%;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+#humansearch:focus {
+    width: 100%;
+}
+
+#humansearch:focus::placeholder {
+    color: transparent;
+}
+
+#humansearch:focus+#humansearchlogo {
+    display: none;
+}
+
+#addpersoncon {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100%;
+    width: min(45%, 90px);
+    background-color: #a80b54;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    font-weight: bolder;
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+#addpersoncon>img {
+    width: 25%;
+}
+
+#homebottom {
+    background-color: white;
+    height: calc(100% - 60px);
+    position: relative;
+    overflow: hidden;
+
+}
+
+#nocustomercon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    color: grey;
+    font-weight: 500;
+    background-color: white;
+}
+
+#nocustomercon>img {
+    width: min(30%, 200px);
+    opacity: 0.5;
+}
+
+#nopersonfound {
+    display: grid;
+    place-items: center;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#nopersonfound>img {
+    width: max(10%, 60px);
+}
+
+#personlistcon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    overflow: hidden auto;
+}
+
+.personitem {
+    width: 50%;
+    background-color: white;
+    display: flex;
+    cursor: pointer;
+    float: left;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    border-right: 1px solid rgb(200, 200, 200);
+}
+
+#personlistcon>.personitem.personnotinsearch {
+    display: none;
+}
+
+.leftsidepersonitem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    height: 100%;
+    width: 70%;
+    padding: 7px;
+}
+
+.personitemname {
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(59, 59, 59);
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+.personitemdate {
+    font-size: 0.6em;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+.rightsidepersonitem {
+    display: flex;
+    width: 30%;
+}
+
+.rightsidepersonitem>.balancepersonitem {
+    padding: 5px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-weight: bolder;
+    overflow: hidden;
+    text-wrap: nowrap;
+    background-color: #ffedf5;
+    color: #b03c72;
+}
+
+.rightsidepersonitem>.balancepersonitem.flipped {
+    background-color: rgb(230, 255, 230);
+    color: rgb(52, 152, 52);
+}
+
+@media (max-width:768px) {
+    .personitem {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+#addpersonpanel {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: calc(calc(min(30vw, 100px) / 2) + 50px);
+    opacity: 0;
+}
+
+#addpersonpanel>div:first-child {
+    background-color: #0752ad;
+    height: min(30vw, 100px);
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#addpersonpanel>div:first-child>img {
+    border-radius: 50%;
+    height: min(30vw, 100px);
+    padding: 7px;
+    background-color: white;
+    transform: translateY(50%);
+}
+
+#personnamecon {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+#personnameinput {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(165, 165, 165);
+    border-radius: 3px;
+    padding: 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+#personnameinput:focus {
+    background-color: #eef5ff;
+    color: #0752ad;
+    font-weight: bolder;
+}
+
+#personnameinput:focus::placeholder {
+    color: transparent;
+}
+
+#addpersonbutcon {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    align-items: center;
+}
+
+#addpersonbutcon>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 5px;
+    min-width: 100px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+#addpersonbut {
+    background: rgb(80, 180, 80);
+}
+
+#addpersonbutcon>div#addpersonbut.load {
+    pointer-events: none;
+}
+
+#addpersonbutcon>div#addpersonbut.inactive {
+    pointer-events: none;
+    background-color: rgb(158, 158, 158);
+}
+
+#addpersonbutcon>div#addpersonbut>img {
+    height: 1em;
+    display: none;
+}
+
+#addpersonbutcon>div#addpersonbut.error {
+    background-color: #ffbb00;
+    pointer-events: none;
+    color: black;
+}
+
+#addpersonbutcon>div#addpersonbut.error>#erroraddpersonimg,
+#addpersonbutcon>div#addpersonbut.load>#loadaddpersonimg {
+    display: block;
+}
+
+#canceladdpersonbut {
+    background-color: rgb(36, 36, 36);
+}
+
+#addtransactionpanel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#personinfocon {
+    display: flex;
+    background-color: #0752ad;
+    height: 70px;
+    overflow: hidden;
+}
+
+#leftsideinfoitem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0px;
+    height: 100%;
+    width: 70%;
+    padding: 10px;
+    overflow: hidden;
+}
+
+#infoitemnamecon {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#infoitemname {
+    font-weight: bold;
+    font-size: 1.1em;
+    width: calc(100% - 16px - 1em);
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(255, 255, 255);
+    text-wrap: nowrap;
+    overflow: hidden;
+}
+
+#pencilcon {
+    padding: 2px 8px;
+    display: grid;
+    place-items: center;
+}
+
+#pencilcon>img {
+    width: 1em;
+    filter: brightness(150%);
+    cursor: pointer;
+}
+
+#infoitemdate {
+    font-size: 0.6em;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    overflow: hidden;
+    text-wrap: nowrap;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+#rightsideinfoitem {
+    display: flex;
+    width: calc(30% - 7px);
+    overflow: hidden;
+}
+
+#rightsideinfoitem>#balanceinfoitem {
+    padding: 5px;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    border-radius: 5px;
+    align-self: center;
+    display: grid;
+    place-items: center;
+    font-weight: bolder;
+    overflow: hidden;
+    text-wrap: nowrap;
+    background-color: #ffedf5;
+    color: #b03c72;
+}
+
+#rightsideinfoitem>#balanceinfoitem.flipped {
+    background-color: rgb(230, 255, 230);
+    color: rgb(52, 152, 52);
+}
+
+#transactionaddbar {
+    width: 100%;
+    padding: 7px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background-color: #063d81;
+    height: 55px;
+    overflow: hidden;
+}
+
+#transactionaddbar>span {
+    padding: 3px 20px;
+    border-radius: 3px;
+    background-color: #4d79af;
+    font-weight: 500;
+    color: #063d81;
+}
+
+#transactionaddbar>div {
+    padding: 7px;
+    place-items: center;
+    display: grid;
+    border-radius: 5px;
+    background-color: #a80b54;
+    filter: brightness(120%);
+    cursor: pointer;
+}
+
+#transactionaddbar>div>img {
+    height: 1.8em;
+}
+
+#actualtransactionbox {
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: calc(100% - 70px - 55px - 55px);
+    overflow: hidden;
+}
+
+#notransactionbox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+#notransactionbox>img {
+    width: min(calc(25% + 1em), 100px);
+    opacity: 0.5;
+
+}
+
+#notransactionfound {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: calc(100% - 40px);
+    background-color: white;
+    display: grid;
+    place-items: center;
+}
+
+#notransactionfound>img {
+    width: min(calc(25% + 1em), 100px);
+    opacity: 0.5;
+}
+
+#translist>.transitem.transnotinsearch {
+    display: none;
+}
+
+#personinfobutcon {
+    padding: 5px;
+    background-color: #cee4ff;
+    box-shadow: 0px -0.01px 5px rgba(0, 0, 0, 0.425);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 55px;
+    gap: 5px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 3;
+}
+
+#personinfobutcon>div {
+    border-radius: 5px;
+    flex: 1;
+    color: white;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background-color: #ba3f3f;
+    cursor: pointer;
+    height: 100%;
+    font-size: 1.2em;
+    /* max-width: 200px; */
+}
+
+#personinfobutcon>div:first-child {
+    background-color: #1b4982;
+}
+
+#personinfobutcon>div>img {
+    height: 1em;
+}
+
+#actualtransactionlist {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: white;
+    left: 0;
+    top: 0;
+    overflow: hidden auto;
+}
+
+#searchbarintransactionlist {
+    background-color: rgb(240, 240, 240);
+    width: 100%;
+    height: 40px;
+    display: flex;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#searchbarintransactionlist>div {
+    display: flex;
+    align-items: center;
+}
+
+#searchbarintransactionlist>#leftinsearchbarintrans {
+    width: 60%;
+    padding: 7px;
+}
+
+#searchbarintransactionlist>#leftinsearchbarintrans>input {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 3px 7px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+#searchbarintransactionlist>#leftinsearchbarintrans>input:focus::placeholder {
+    color: transparent;
+}
+
+#searchbarintransactionlist>#rightinsearchbarintrans {
+    width: 40%;
+}
+
+#rightinsearchbarintrans>div {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    text-wrap: nowrap;
+    width: 50%;
+    padding: 7px 5px;
+    height: 100%;
+    color: grey;
+    font-weight: 500;
+    font-size: 0.8em;
+}
+
+
+/* transactionitem2 */
+.transactionitem2 {
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    display: flex;
+    height: 70px;
+    cursor: pointer;
+}
+
+.leftintransitem2 {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    width: 60%;
+}
+
+.dateintransitem2 {
+    padding: 1px 8px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 2em;
+    width: max-content;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+.datetimeintransitem2 {
+    font-size: 0.5em;
+    font-weight: 500;
+    color: grey;
+    margin-left: 5px;
+}
+
+.rightintransitem2 {
+    width: 40%;
+    display: flex;
+
+}
+
+.rightintransitem2>div {
+    padding: 1px 5px;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+
+.gaveintransitem2 {
+    background-color: rgb(245, 255, 245);
+    color: rgb(60, 149, 60);
+}
+
+.balanceintransitem2 {
+    background-color: rgb(255, 243, 243);
+    color: rgb(184, 61, 61);
+}
+
+
+
+
+
+
+.transactionitem {
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid rgb(200, 200, 200);
+    display: flex;
+    height: 70px;
+    cursor: pointer;
+}
+
+.leftintransitem {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    width: 60%;
+
+}
+
+.venueintransitem {
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.8em;
+    overflow: hidden;
+}
+
+.sftndateintransitemcon {
+    display: flex;
+    gap: 20px;
+    font-size: 0.7em;
+    font-weight: 500;
+    align-items: center;
+}
+
+.sftintransitem {
+    padding: 1px 8px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 2em;
+}
+
+.dateintransitem {
+    padding: 1px 8px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 2em;
+}
+
+.datetimeintransitem {
+    font-size: 0.5em;
+    font-weight: 500;
+    color: grey;
+}
+
+.rightintransitem {
+    width: 40%;
+    display: flex;
+
+}
+
+.rightintransitem>div {
+    padding: 1px 5px;
+    width: 50%;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 0.8em;
+}
+
+.gaveintransitem {
+    background-color: rgb(245, 255, 245);
+    color: rgb(60, 149, 60);
+}
+
+.balanceintransitem {
+    background-color: rgb(255, 243, 243);
+    color: rgb(184, 61, 61);
+}
+
+.zerobelowitcon {
+    border-bottom: 1px solid rgb(200, 200, 200);
+    background-color: white;
+    position: relative;
+    width: 100%;
+    height: 35px;
+}
+
+.zerobelowitline {
+    height: 2px;
+    background-color: rgb(255, 238, 194);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.zerobelowitcontent {
+    background-color: rgb(255, 246, 224);
+    border: 0.5px solid rgb(239, 185, 61);
+    /* border-left: none;
+    border-right:none; */
+    color: rgb(239, 185, 61);
+    padding: 2px 7px;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+    font-size: 0.7em;
+    font-family: Montserrat, sans-serif;
+    display: grid;
+    place-items: center;
+}
+
+/*person transactions panel css end */
+
+
+
+/* trans info panel 1 starts */
+#individualtransinfopanel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden auto;
+    opacity: 0;
+}
+
+#nameintransinfopanel {
+    background-color: #0752ad;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    top: 0;
+}
+
+#nameintransinfopanel>img {
+    height: 1.2em;
+}
+
+#individualtransinfopanel>div:not(#individualtransinfobutcon, #nameintransinfopanel) {
+    display: flex;
+    flex-direction: column;
+}
+
+#individualtransinfopanel>div:not(#individualtransinfobutcon, #nameintransinfopanel)>div:nth-child(2) {
+    padding: 0 15px 0 50px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+#individualtransinfopanel>div:not(#individualtransinfobutcon)>div:first-child {
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+    font-size: 12px;
+    color: #4d79af;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#individualtransinfopanel>div:not(#individualtransinfobutcon)>div:first-child>img {
+    height: 25px;
+    width: 25px;
+    object-fit: contain;
+    overflow: visible;
+}
+
+#individualtransinfobutcon {
+    padding: 7px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    gap: 5px;
+}
+
+#individualtransinfobutcon>div {
+    border-radius: 5px;
+    flex: 1;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background-color: rgb(195, 54, 54);
+    cursor: pointer;
+    height: 100%;
+    font-size: 1.2em;
+    /* max-width: 200px; */
+}
+
+#individualtransinfobutcon>div:first-child {
+    background-color: #1b4982;
+
+}
+
+#individualtransinfobutcon>div>img {
+    height: 0.8em;
+}
+
+#editbuttonforindtrans {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e92e85;
+    right: 15px;
+    bottom: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#editbuttonforindtrans>img {
+    width: 20px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(103%);
+}
+
+/*trans info panel 1 end */
+
+
+
+/*trans info panel 2 start*/
+#individualtransinfopanel2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden auto;
+    opacity: 0;
+}
+
+#nameintransinfopanel2 {
+    background-color: #0752ad;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    top: 0;
+}
+
+#nameintransinfopanel2>img {
+    height: 1.2em;
+}
+
+#individualtransinfopanel2>div:not(#individualtransinfobutcon2, #nameintransinfopanel2) {
+    display: flex;
+    flex-direction: column;
+}
+
+#individualtransinfopanel2>div:not(#individualtransinfobutcon2, #nameintransinfopanel2)>div:nth-child(2) {
+    padding: 0 15px 0 50px;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+#individualtransinfopanel2>div:not(#individualtransinfobutcon2)>div:first-child {
+    display: flex;
+    padding: 0 15px;
+    align-items: center;
+    gap: 10px;
+    font-weight: bolder;
+    font-size: 12px;
+    color: #4d79af;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#individualtransinfopanel2>div:not(#individualtransinfobutcon2)>div:first-child>img {
+    height: 25px;
+    width: 25px;
+    object-fit: contain;
+    overflow: visible;
+}
+
+#individualtransinfobutcon2 {
+    padding: 7px;
+    background-color: rgb(240, 240, 240);
+    display: flex;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    gap: 5px;
+}
+
+#individualtransinfobutcon2>div {
+    border-radius: 5px;
+    flex: 1;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background-color: rgb(195, 54, 54);
+    cursor: pointer;
+    height: 100%;
+    font-size: 1.2em;
+    /* max-width: 200px; */
+}
+
+#individualtransinfobutcon2>div:first-child {
+    background-color: #1b4982;
+
+}
+
+#individualtransinfobutcon2>div>img {
+    height: 0.8em;
+}
+
+#editbuttonforindtrans2 {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e92e85;
+    right: 15px;
+    bottom: 70px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#editbuttonforindtrans2>img {
+    width: 20px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(245deg) brightness(104%) contrast(103%);
+}
+
+/*trans info panel 2 end*/
+
+
+
+/* trans editing panel start */
+#transeditpanel {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+}
+
+#transeditpanelheader {
+    padding: 10px 10px 0px 7px;
+    background-color: #0752ad;
+    display: flex;
+    align-items: flex-end;
+    min-height: 45px;
+    max-height: 45px;
+}
+
+#transeditpanelheader>div {
+    font-weight: bolder;
+    font-size: 1.2em;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    width: 40px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 3px 3px 0 0;
+    cursor: pointer;
+}
+
+#transeditpanelheader>div.selectedoption {
+    background-color: white;
+    color: #0752ad;
+    pointer-events: none;
+}
+
+#transeditpanel1 {
+    height: calc(100vh - 45px);
+    background-color: white;
+    padding: 10px 15px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+}
+
+#venueeditcon {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding-top: 1.5em;
+}
+
+#venueeditcon>input {
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    outline: none;
+    font-weight: 500;
+}
+
+#venueeditcon>input:focus {
+    border-color: #a80b54;
+}
+
+#venueeditcon>label {
+    position: absolute;
+    left: 3px;
+    top: calc(6px + 2em);
+    transform: translateY(-50%);
+    font-weight: bolder;
+    color: rgb(180, 180, 180);
+    transition: 0.3s ease-in-out;
+}
+
+#venueeditcon>input:focus+label,
+#venueeditcon>input:not(:placeholder-shown)+label {
+    top: 0.9em;
+    color: #a80b54;
+    transform: translateY(0%);
+    font-size: 0.7em;
+}
+
+#dtsftconinedittrans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dateeditcon {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+    padding-top: 1.5em;
+}
+
+#dateeditcon>input {
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    outline: none;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#dateeditcon>input:focus {
+    border-color: #a80b54;
+}
+
+#dateeditcon>label {
+    position: absolute;
+    left: 3px;
+    top: 0.9em;
+    font-weight: bolder;
+    color: #a80b54;
+    font-size: 0.7em;
+}
+
+#shifteditcon {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+    padding-top: 1.5em;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#justsfttext {
+    position: absolute;
+    left: 3px;
+    top: 0.9em;
+    font-weight: bolder;
+    color: #a80b54;
+    font-size: 0.7em;
+}
+
+#shiftedit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* border: 1px solid #0752ad; */
+    border-radius: 3px;
+}
+
+#shiftedit>div {
+    padding: 7px 5px;
+    width: 45%;
+    font-weight: bolder;
+    display: grid;
+    place-items: center;
+    color: grey;
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    font-size: 0.8em;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 50px;
+}
+
+#shiftedit>div.selectedshift {
+    background-color: #fff4dd;
+    color: #bf8508;
+    pointer-events: none;
+}
+
+#totalgaveconinedittrans {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#totalgaveconinedittrans>div {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 45%;
+    padding-top: 1.5em;
+}
+
+#totalgaveconinedittrans>div>input {
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    outline: none;
+    font-weight: 500;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.3s;
+    transition-delay: 0.4s;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+#totalgaveconinedittrans>div>input:focus {
+    border-color: #a80b54;
+}
+
+#totalgaveconinedittrans>div>label {
+    position: absolute;
+    left: 3px;
+    top: calc(6px + 2em);
+    transform: translateY(-50%);
+    font-weight: bolder;
+    color: rgb(180, 180, 180);
+    transition: 0.3s ease-in-out;
+}
+
+#totalgaveconinedittrans>div>input:focus+label,
+#totalgaveconinedittrans>div>input:not(:placeholder-shown)+label {
+    top: 0.9em;
+    color: #a80b54;
+    transform: translateY(0%);
+    font-size: 0.7em;
+}
+
+#butconfortransediting {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#butconfortransediting>div {
+    color: black;
+    font-weight: 500;
+    min-width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    /* font-size: 0.8em; */
+}
+
+#butconfortransediting>#savefortransedit {
+    color: grey;
+    border-color: grey;
+    pointer-events: none;
+}
+
+#butconfortransediting>#savefortransedit.active {
+    color: rgb(70, 174, 70);
+    border-color: rgb(70, 174, 70);
+    pointer-events: auto;
+}
+
+#butconfortransediting>#savefortransedit>img {
+    height: 1em;
+    display: none;
+}
+
+#butconfortransediting>#savefortransedit>#loadimgfortransedit {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(88%) saturate(354%) hue-rotate(71deg) brightness(87%) contrast(86%);
+}
+
+#butconfortransediting>#savefortransedit>#errorimgfortransedit {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(27%) saturate(2391%) hue-rotate(329deg) brightness(103%) contrast(85%);
+}
+
+#butconfortransediting>#savefortransedit.load>#loadimgfortransedit,
+#butconfortransediting>#savefortransedit.error>#errorimgfortransedit {
+    display: block;
+}
+
+#butconfortransediting>#savefortransedit.load>#errorimgfortransedit,
+#butconfortransediting>#savefortransedit.error>#loadimgfortransedit {
+    display: none;
+}
+
+#butconfortransediting>#savefortransedit.error {
+    color: #C23C3C;
+    border-color: #C23C3C;
+    pointer-events: none;
+}
+
+#butconfortransediting>#savefortransedit.load {
+    pointer-events: none;
+}
+
+
+/* panel 2 */
+#transeditpanel2 {
+    height: calc(100vh - 45px);
+    background-color: white;
+    padding: 10px 15px;
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 100%;
+}
+
+#dateeditcon2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding-top: 1.5em;
+}
+
+#dateeditcon2>input {
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    outline: none;
+    font-weight: 500;
+}
+
+#dateeditcon2>input:focus {
+    border-color: #a80b54;
+}
+
+#dateeditcon2>label {
+    position: absolute;
+    left: 3px;
+    top: 0.9em;
+    font-weight: bolder;
+    color: #a80b54;
+    font-size: 0.7em;
+}
+
+#gaveeditcon2 {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding-top: 1.5em;
+}
+
+#gaveeditcon2>input {
+    padding: 3px;
+    margin: 0;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 1.5px solid rgb(190, 190, 190);
+    outline: none;
+    font-weight: 500;
+}
+
+#gaveeditcon2>input:focus {
+    border-color: #a80b54;
+}
+
+#gaveeditcon2>label {
+    position: absolute;
+    left: 3px;
+    top: calc(6px + 2em);
+    transform: translateY(-50%);
+    font-weight: bolder;
+    color: rgb(180, 180, 180);
+    transition: 0.3s ease-in-out;
+}
+
+#gaveeditcon2>input:focus+label,
+#gaveeditcon2>input:not(:placeholder-shown)+label {
+    top: 0.9em;
+    color: #a80b54;
+    transform: translateY(0%);
+    font-size: 0.7em;
+}
+
+#butconfortransediting2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+#butconfortransediting2>div {
+    color: black;
+    font-weight: 500;
+    min-width: 80px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    /* font-size: 0.8em; */
+}
+
+#butconfortransediting2>#savefortransedit2 {
+    color: grey;
+    border-color: grey;
+    pointer-events: none;
+}
+
+#butconfortransediting2>#savefortransedit2.active {
+    color: rgb(70, 174, 70);
+    border-color: rgb(70, 174, 70);
+    pointer-events: auto;
+}
+
+#butconfortransediting2>#savefortransedit2>img {
+    height: 1em;
+    display: none;
+}
+
+#butconfortransediting2>#savefortransedit2>#loadimgfortransedit2 {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(88%) saturate(354%) hue-rotate(71deg) brightness(87%) contrast(86%);
+}
+
+#butconfortransediting2>#savefortransedit2>#errorimgfortransedit2 {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(27%) saturate(2391%) hue-rotate(329deg) brightness(103%) contrast(85%);
+}
+
+#butconfortransediting2>#savefortransedit2.load>#loadimgfortransedit2,
+#butconfortransediting2>#savefortransedit2.error>#errorimgfortransedit2 {
+    display: block;
+}
+
+#butconfortransediting2>#savefortransedit2.load>#errorimgfortransedit2,
+#butconfortransediting2>#savefortransedit2.error>#loadimgfortransedit2 {
+    display: none;
+}
+
+#butconfortransediting2>#savefortransedit2.load {
+    pointer-events: none;
+}
+
+#butconfortransediting2>#savefortransedit2.error {
+    color: #C23C3C;
+    border-color: #C23C3C;
+    pointer-events: none;
+}
+
+
+.errormsgfortransedit {
+    margin-top: 3px;
+    color: red;
+    font-size: 0.6em;
+    font-weight: 500;
+    animation-timing-function: linear;
+    animation-name: blinkerror;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    visibility: hidden;
+}
+
+@keyframes blinkerror {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
+}
+
+/*trans edit panel end*/
+
+/* delete person panel css start */
+#deletepersonpanel {
+    position: absolute;
+    /* z-index:2; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+}
+
+#deletepersonpanel>div {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    /* border-radius:20px 20px 0 0 ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 15px;
+    position: relative;
+    transform: translateY(50%);
+    transition: transform 0.3s;
+    transition-timing-function: linear;
+}
+
+#deletepersonpanel>div.up {
+    transform: translateY(0%);
+}
+
+#deletepersonpanel>div>img {
+    align-self: baseline;
+    width: min(30%, 150px);
+    position: absolute;
+    left: 20px;
+    top: 0;
+    transform: translateY(-60%);
+}
+
+#delmsgforper {
+    color: black;
+    font-size: 1.3em;
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+}
+
+#delpopbutcon {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#delpopbutcon>div {
+    flex: 1;
+    border-radius: 5px;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    max-width: 200px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#cancelperdelbut {
+    border: 2px solid #a80b54;
+    color: #a80b54;
+}
+
+#confirmperdelbut {
+    border: 2px solid #0752ad;
+    color: #0752ad;
+}
+
+#delpopbutcon>div>img {
+    height: 1em;
+    display: none;
+}
+
+#loaddelperimg {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(2048%) hue-rotate(202deg) brightness(93%) contrast(95%);
+}
+
+#errordelperimg {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(90%) saturate(846%) hue-rotate(15deg) brightness(92%) contrast(94%);
+}
+
+#delpopbutcon>#confirmperdelbut.error {
+    color: #bf8508;
+    border-color: #bf8508;
+    filter: brightness(120%);
+}
+
+#delpopbutcon>#confirmperdelbut.load>#loaddelperimg,
+#delpopbutcon>#confirmperdelbut.error>#errordelperimg {
+    display: block;
+}
+
+/* delete person panel css end */
+
+
+
+/* delete transaction css start */
+#deletetranspanel {
+    position: absolute;
+    /* z-index:2; */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: flex-end;
+    opacity: 0;
+}
+
+#deletetranspanel>div {
+    width: 100%;
+    height: 200px;
+    background-color: white;
+    /* border-radius:20px 20px 0 0 ; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 10px;
+    gap: 15px;
+    position: relative;
+    transform: translateY(50%);
+    transition: transform 0.3s;
+    transition-timing-function: linear;
+}
+
+#deletetranspanel>div.up {
+    transform: translateY(0%);
+}
+
+#deletetranspanel>div>img {
+    align-self: baseline;
+    width: min(30%, 150px);
+    position: absolute;
+    left: 20px;
+    top: 0;
+    transform: translateY(-60%);
+    filter: drop-shadow(0 0 5px rgba(76, 76, 76, 0.43));
+}
+
+#delmsgfortrans {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+    text-align: center;
+}
+
+#delmsgfortrans>span {
+    font-size: 0.6em;
+}
+
+#delmsgfortrans>span:first-child {
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+#delpopbutconfortrans {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+#delpopbutconfortrans>div {
+    flex: 1;
+    border-radius: 5px;
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    max-width: 200px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#canceltransdelbut {
+    border: 2px solid #a80b54;
+    color: #a80b54;
+}
+
+#confirmtransdelbut {
+    border: 2px solid #0752ad;
+    color: #0752ad;
+}
+
+#delpopbutconfortrans>div>img {
+    height: 1em;
+    display: none;
+
+}
+
+#loaddeltransimg {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(90%) saturate(2048%) hue-rotate(202deg) brightness(93%) contrast(95%);
+}
+
+#errordeltransimg {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(90%) saturate(846%) hue-rotate(15deg) brightness(92%) contrast(94%);
+}
+
+#delpopbutconfortrans>#confirmtransdelbut.error {
+    color: #bf8508;
+    border-color: #bf8508;
+    filter: brightness(120%);
+    pointer-events: none;
+}
+
+#delpopbutconfortrans>#confirmtransdelbut.load {
+    pointer-events: none;
+}
+
+#delpopbutconfortrans>#confirmtransdelbut.load>#loaddeltransimg,
+#delpopbutconfortrans>#confirmtransdelbut.error>#errordeltransimg {
+    display: block;
+}
+
+#delpopbutconfortrans>#confirmtransdelbut.error>#loaddeltransimg,
+#delpopbutconfortrans>#confirmtransdelbut.load>#errordeltransimg {
+    display: none;
+}
+
+/* delete trans panel end */
+
+
+
+
+
+
+/* shown screens panel */
+section.shownpanel {
+    opacity: 1 !important;
+    z-index: 5;
+}
+
+section.extrashownpanel {
+    opacity: 1 !important;
+    z-index: 6;
+}
+
+.showntranseditpanel {
+    z-index: 1;
+}
+
+.shownpersonsubpanel {
+    z-index: 1;
+}
+
+.showntransinfopanel {
+    z-index: 2;
+}
